@@ -1,0 +1,585 @@
+/* 🌸 GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FFF7F7;
+    color: #5A4A4A;
+    padding: 30px;
+}
+
+/* smooth animation */
+a, button, tr {
+    transition: 0.3s ease;
+}
+
+/* 🌸 NAVBAR */
+.navbar {
+    background-color: #F8C8DC;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.navbar h2 {
+    margin: 0;
+    color: #5A4A4A;
+}
+
+/* nav links */
+.nav-links a {
+    margin-left: 20px;
+    color: #5A4A4A;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 8px;
+}
+
+/* hover navbar */
+/* 🌸 ACTIVE NAVBAR */
+.nav-links a.active{
+    background-color:#E8B7C7;
+    color:white;
+    box-shadow:0px 0px 10px rgba(232,183,199,0.8);
+}
+
+/* 🚨 LOGOUT BUTTON (RED DANGER STYLE) */
+.logout-btn {
+    color: #e74c3c !important;
+    font-weight: 600;
+}
+
+/* hover logout */
+.logout-btn:hover {
+    background-color: #e74c3c !important;
+    color: white !important;
+}
+
+/* 🌸 HEADINGS */
+h1, h2 {
+    text-align: center;
+}
+
+/* 🌸 FORM + TABLE CARD */
+form, table {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+    margin-top: 20px;
+}
+
+/* 🌸 TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #F8C8DC;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+/* row hover */
+tr:hover {
+    background-color: #FFF0F5;
+}
+
+/* 🌸 INPUT */
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+}
+
+/* 🌸 BUTTON */
+button {
+    background-color: #F8C8DC;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #E8B7C7;
+    transform: scale(1.05);
+}
+
+/* 🌸 LINKS */
+a {
+    text-decoration: none;
+    color: #B76E79;
+    font-weight: 500;
+}
+
+/* 🌸 ADD BUTTON (optional) */
+.add-btn {
+    background-color: #F8C8DC;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.add-btn:hover {
+    background-color: #E8B7C7;
+    color: white;
+}
+
+
+/*CSS icon styling*/
+.icon {
+    margin: 0 5px;
+    font-size: 18px;
+}
+
+/* edit icon */
+.icon.edit {
+    color: #f39c12;
+}
+
+/* delete icon */
+.icon.delete {
+    color: #e74c3c;
+}
+
+/* hover effect */
+.icon:hover {
+    transform: scale(1.2);
+}
+
+/* 🌸 CARD CONTAINER */
+.card-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 250px));
+    gap:20px;
+
+    justify-content:center; /* 💖 center bila item sikit */
+}
+
+.card-image{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* 🌸 CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.08);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+.card h3{
+    margin-top:0;
+}
+
+/* 💚 purchased glow */
+.card.purchased{
+    background: #f3fff6;
+    border: 2px dashed #7bd88f;
+}
+
+.card.purchased:hover{
+    transform:translateY(-5px) scale(1.02);
+    background-color:#eafaf0; /* 💚 soft green background */
+    border-color:#7bd88f;     /* green border glow */
+    box-shadow:0px 8px 18px rgba(123,216,143,0.25);
+}
+
+/* 🌸 STATUS BADGE */
+.status{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:12px;
+    font-size:12px;
+    margin-top:8px;
+}
+
+/* ❤️ not purchased */
+.status.not{
+    background-color:#f8d7da;
+    color:#c0392b;
+}
+
+/* 💚 purchased */
+.status.purchased{
+    background-color:#d4edda;
+    color:#2e7d32;
+    font-weight:600;
+}
+
+/* 🌸 MODAL */
+.modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    background:white;
+    width:400px;
+    margin:8% auto;
+    padding:25px;
+    border-radius:15px;
+    position:relative;
+    text-align:center;
+}
+
+.close{
+    position:absolute;
+    right:15px;
+    top:10px;
+    cursor:pointer;
+    font-size:22px;
+}
+
+/* 🌸 MODAL BUTTONS */
+.btn{
+    display:inline-block;
+    margin-top:15px;
+    padding:10px 14px;
+    border-radius:10px;
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+.edit{
+    background:#f39c12;
+}
+
+.delete{
+    background:#e74c3c;
+}
+
+/* 🌸 IMAGE */
+.wishlist-image{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+/* 🌸 AUTH PAGE */
+.auth-container{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* 🌸 LOGIN BOX */
+.auth-box{
+    width:400px;
+    background:white;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0px 5px 20px rgba(0,0,0,0.08);
+
+    text-align:center;
+}
+
+/* 🌸 SUBTITLE */
+.subtitle{
+    color:#999;
+    margin-bottom:25px;
+}
+
+/* 🌸 FORM */
+.auth-box form{
+    box-shadow:none;
+    padding:0;
+    margin-top:0;
+}
+
+/* 🌸 LABEL */
+.auth-box label{
+    display:block;
+    text-align:left;
+    margin-top:15px;
+    margin-bottom:5px;
+    font-weight:500;
+}
+
+/* 🌸 AUTH INPUT FIX (SEMUA SAMA PANJANG) */
+.auth-box input{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+
+/* 🌸 PASSWORD BOX WRAPPER */
+.password-box{
+    position:relative;
+    width:100%;
+}
+
+/* override input dalam password-box */
+.password-box input{
+    width:100%;
+    padding:10px 40px 10px 10px; /* ruang untuk icon kanan */
+    border-radius:10px;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+}
+
+/* 🌸 TOGGLE ICON */
+.toggle-password{
+    position:absolute;
+    right:12px;
+    top:50%;
+    transform:translateY(-50%);
+    cursor:pointer;
+    font-size:16px;
+    user-select:none;
+    color:#888;
+}
+
+.toggle-password:hover{
+    color:#5A4A4A;
+}
+
+/* 🌸 BUTTON */
+.auth-box button{
+    width:100%;
+    margin-top:20px;
+}
+
+/* 🌸 ERROR MESSAGE */
+.error-message{
+    background:#fde2e2;
+    color:#c0392b;
+
+    padding:10px;
+    border-radius:10px;
+
+    margin-bottom:15px;
+}
+
+/* 🌸 BOTTOM TEXT */
+.bottom-text{
+    margin-top:20px;
+    font-size:14px;
+}
+
+/* 🌸 WELCOME */
+.welcome-section{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.welcome-section p{
+    color:#888;
+}
+
+/* 🌸 FORM CONTAINER (NO SCROLL FIX) */
+.form-container{
+    max-width:450px;
+    margin:20px auto;
+}
+
+/* 🌸 FORM BOX (COMPACT VERSION) */
+.form-container form{
+    background:white;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0px 4px 10px rgba(0,0,0,0.08);
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;   /* kecilkan gap supaya tak panjang */
+}
+
+/* 🌸 LABEL */
+.form-container label{
+    font-weight:500;
+    margin-top:5px;
+    margin-bottom:2px;
+    font-size:14px;
+}
+
+/* 🌸 INPUT + SELECT */
+.form-container input,
+.form-container select{
+    width:100%;
+    padding:10px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+    font-size:14px;
+}
+
+/* 🌸 BUTTON */
+.form-container button{
+    margin-top:10px;
+    padding:10px;
+}
+
+/* 🌸 CARD */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+
+    border:2px dashed #F8C8DC; /* 💖 dashed border */
+
+    box-shadow:0px 2px 8px rgba(0,0,0,0.05);
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#E8B7C7;
+    box-shadow:0px 6px 15px rgba(0,0,0,0.12);
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.card-image{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:10px;
+}
+
+/* 🌸 MODAL */
+.modal{
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.5);
+
+    z-index:999;
+}
+
+.modal-content{
+    background:white;
+
+    width:350px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    position:relative;
+
+    animation:popup 0.3s ease;
+}
+
+@keyframes popup{
+
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.modal-content h2{
+    margin-bottom:15px;
+}
+
+.modal-content p{
+    margin:10px 0;
+}
+
+/* 🌸 MODAL BUTTON AREA */
+.modal-buttons{
+    margin-top:20px;
+
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.form-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+/* 🌸 BUTTON BASE (SAMAKAN SEMUA BUTTON) */
+button,
+.btn,
+.cancel-btn{
+    font-family: inherit;
+    font-size:14px;
+    padding:10px 20px;
+    border-radius:10px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+/* 🌸 UPDATE BUTTON (DEFAULT PINK) */
+button{
+    background-color:#F8C8DC;
+    color:#5A4A4A;
+}
+
+button:hover{
+    background-color:#E8B7C7;
+    transform:scale(1.05);
+}
+
+.form-buttons button[type="button"]{
+    background:#e74c3c;
+    color:white;
+}
+
+.form-buttons button[type="button"]:hover{
+    background:#c0392b;
+}
+
