@@ -25,16 +25,6 @@ With a simple and user-friendly interface, the application provides a convenient
 <table>
   <tr>
     <td align="center" width="50%">
-      <strong>Login Page</strong><br><br>
-      <img src="UI_Wishlist/Login.png" width="70%" alt="Wishlist Login Page">
-    </td>
-    <td align="center" width="50%">
-      <strong>Register Page</strong><br><br>
-      <img src="UI_Wishlist/Register.png" width="70%" alt="Wishlist Register Page">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="50%">
       <strong>Wishlist Dashboard</strong><br><br>
       <img src="UI_Wishlist/Dashboard.png" width="70%" alt="Wishlist Dashboard">
     </td>
